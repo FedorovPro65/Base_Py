@@ -55,7 +55,7 @@ def izm_time(func):
     ''' декоратор определяет время выполнения функции в секундах. '''
 
     def time2(*args, **kwargs):
-        # print(args)
+        # print(args) #1
         # print(kwargs)
         tic = time.perf_counter()
         a = func(*args, **kwargs)
@@ -64,11 +64,6 @@ def izm_time(func):
         return a
 
     return time2
-
-
-class TimerError(Exception):  # 5
-    """Пользовательское исключение, используемое для сообщения об ошибках при использовании класса Timer"""
-
 
 @izm_time
 def test(n, d_calc):
